@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: bimu-postgres
+    environment:
+      POSTGRES_DB: bimu
+      POSTGRES_USER: bimu_user
+      POSTGRES_PASSWORD: bimu_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - bimu_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  bimu_postgres_data:
